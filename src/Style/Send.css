@@ -1,0 +1,14 @@
+.display {
+  margin-top: 34vh;
+  margin: auto;
+  width: 80%;
+}
+
+p {
+  text-align: left;
+  height: auto;
+  width: 100%;
+  overflow: auto;
+  font-size: 18px;
+}
+

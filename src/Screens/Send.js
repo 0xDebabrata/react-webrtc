@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import '../Style/Send.css'
 
 const Send = () => {
   
@@ -40,7 +41,8 @@ const Send = () => {
   })
 
   return (
-    <div>
+    <div className="display">
+      <h1>Offer</h1>
       <p id="offer"></p>
     </div>
   )
