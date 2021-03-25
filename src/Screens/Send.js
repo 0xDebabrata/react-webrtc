@@ -24,20 +24,24 @@ const Send = () => {
   }
 
   localConn.onicecandidate = e => {
-    console.log("SDP updated", JSON.stringify(localConn.localDescription))
+    console.log("New ice candidate! ", JSON.stringify(localConn.localDescription))
   }
 
   useEffect(() => {
     const createOffer = async () => {
       const offer = await localConn.createOffer()
-      localConn.setLocalDescription(offer).then(() => console.log('local desc set'))
+      const p = document.getElementById("offer")
+      localConn.setLocalDescription(offer).then(() => {
+        console.log('local desc set')
+        p.innerText = JSON.stringify(offer)
+      })
     }
       createOffer()
   })
 
   return (
     <div>
-      Hello
+      <p id="offer"></p>
     </div>
   )
 }
