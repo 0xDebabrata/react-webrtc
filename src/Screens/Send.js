@@ -41,7 +41,7 @@ const Send = () => {
       const offer = await localConn.createOffer()
       const p = document.getElementById("offer")
       localConn.setLocalDescription(offer).then(() => {
-        p.innerText = "Check console for offer"
+        p.innerText = "1. Check console for offer."
       })
     }
       createOffer()
@@ -52,7 +52,7 @@ const Send = () => {
       <h1>Offer</h1>
       <p id="offer"></p>
       <div>
-        <input id="answer" type="textarea" placeholder="Enter answer" /><br />
+        <textarea id="answer" rows="10" cols="50" placeholder="Enter answer" /><br />
         <button onClick={setRemoteDesc}>Connect</button>
       </div>
     </div>

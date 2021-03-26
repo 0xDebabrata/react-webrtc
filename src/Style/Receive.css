@@ -1,0 +1,11 @@
+.receive-container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  margin-top: 25vh;
+}
+
+.instructions {
+  display: table;
+  margin: 50px auto;
+}

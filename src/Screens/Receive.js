@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Style/Receive.css'
 
 const Receive = () => {
 
@@ -27,8 +28,14 @@ const Receive = () => {
   }
 
   return (
-    <div>
-      <input id="remoteOffer" type="textarea" placeholder="Enter offer" /><br />
+    <div className="receive-container">
+      <div>
+        <ol className="instructions">
+          <li>Enter offer from remote peer.</li>
+          <li>Check console for answer.</li>
+        </ol>
+        <textarea id="remoteOffer" rows="10" cols="50" placeholder="Enter offer" /><br />
+      </div>  
       <button onClick={enterRoom}>Enter</button>
     </div>
   )
