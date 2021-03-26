@@ -39,9 +39,8 @@ const Send = () => {
   useEffect(() => {
     const createOffer = async () => {
       const offer = await localConn.createOffer()
-      const p = document.getElementById("offer")
       localConn.setLocalDescription(offer).then(() => {
-        p.innerText = "1. Check console for offer."
+        console.log("Local desc set")
       })
     }
       createOffer()
@@ -49,9 +48,13 @@ const Send = () => {
 
   return (
     <div className="display">
-      <h1>Offer</h1>
+      <h1>Peer A</h1>
       <p id="offer"></p>
       <div>
+        <ol className="instructions">
+          <li>Check console for latest offer.</li>
+          <li>Enter answer from Peer B.</li>
+        </ol>
         <textarea id="answer" rows="10" cols="50" placeholder="Enter answer" /><br />
         <button onClick={setRemoteDesc}>Connect</button>
       </div>

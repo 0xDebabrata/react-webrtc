@@ -30,9 +30,10 @@ const Receive = () => {
   return (
     <div className="receive-container">
       <div>
+        <h1>Peer B</h1>
         <ol className="instructions">
-          <li>Enter offer from remote peer.</li>
-          <li>Check console for answer.</li>
+          <li>Enter offer from peer A.</li>
+          <li>Check console for latest answer.</li>
         </ol>
         <textarea id="remoteOffer" rows="10" cols="50" placeholder="Enter offer" /><br />
       </div>  
