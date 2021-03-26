@@ -25,7 +25,15 @@ const Send = () => {
   }
 
   localConn.onicecandidate = e => {
-    console.log("New ice candidate! ", JSON.stringify(localConn.localDescription))
+    console.log("OFFER: ", JSON.stringify(localConn.localDescription))
+  }
+
+  // Set remote description
+  const setRemoteDesc = () => {
+    const answer = document.getElementById("answer").value
+    console.log("ANSWER: ", answer)
+    localConn.setRemoteDescription(JSON.parse(answer))
+      .then(() => console.log("Connected successfully"))
   }
 
   useEffect(() => {
@@ -33,8 +41,7 @@ const Send = () => {
       const offer = await localConn.createOffer()
       const p = document.getElementById("offer")
       localConn.setLocalDescription(offer).then(() => {
-        console.log('local desc set')
-        p.innerText = JSON.stringify(offer)
+        p.innerText = "Check console for offer"
       })
     }
       createOffer()
@@ -44,6 +51,10 @@ const Send = () => {
     <div className="display">
       <h1>Offer</h1>
       <p id="offer"></p>
+      <div>
+        <input id="answer" type="textarea" placeholder="Enter answer" /><br />
+        <button onClick={setRemoteDesc}>Connect</button>
+      </div>
     </div>
   )
 }
